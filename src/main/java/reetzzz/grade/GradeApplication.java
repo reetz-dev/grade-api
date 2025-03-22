@@ -1,4 +1,4 @@
-package com.reetzzz.grade;
+package reetzzz.grade;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
