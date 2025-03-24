@@ -1,17 +1,28 @@
 package reetzzz.grade.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import reetzzz.grade.weekday.Weekday;
+
+import java.util.List;
 
 @Entity
 public class Grade {
 
     @Id
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
     private String name;
-
+    private List<Weekday> weekdays;
     public Long getId() {
         return id;
+    }
+
+    public List<Weekday> getWeekdays() {
+        return weekdays;
+    }
+
+    public void setWeekdays(List<Weekday> weekdays) {
+        this.weekdays = weekdays;
     }
 
     public void setId(Long id) {
