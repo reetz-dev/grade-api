@@ -4,7 +4,7 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reetzzz.grade.model.Grade;
-import reetzzz.grade.weekday.Weekday;
+import reetzzz.grade.enums.Weekday;
 import reetzzz.grade.repository.GradeRepository;
 
 import java.util.ArrayList;

@@ -1,5 +1,7 @@
 package reetzzz.grade.service;
 
+import org.springframework.transaction.annotation.Transactional;
+import reetzzz.grade.dto.GradeDTO;
 import reetzzz.grade.model.Grade;
 import reetzzz.grade.repository.GradeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +15,10 @@ public class GradeService {
 
     @Autowired
     private GradeRepository gradeRepository;
-
-    public Grade createOrUpdateGrade(Grade grade) {
-        return gradeRepository.save(grade);
+    @Transactional
+    public Grade createOrUpdateGrade(GradeDTO grade) {
+        Grade grade1 = new Grade(grade, null, null);
+        return gradeRepository.save(grade1);
     }
 
     public List<Grade> getAllGrades() {

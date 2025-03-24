@@ -1,15 +1,15 @@
 package reetzzz.grade.controller;
 
-import reetzzz.grade.weekday.AddWeekdayRequest;
+import reetzzz.grade.dto.*;
 import reetzzz.grade.model.Grade;
 import reetzzz.grade.service.GradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import reetzzz.grade.service.TimeService;
 import reetzzz.grade.service.WeekdayService;
-import reetzzz.grade.weekday.UpdateWeekdayRequest;
-import reetzzz.grade.weekday.Weekday;
+import reetzzz.grade.enums.Weekday;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,13 +21,18 @@ public class GradeController {
     private WeekdayService weekdayService;
     @Autowired
     private GradeService gradeService;
-
+    @Autowired
+    private TimeService timeService;
     @PutMapping("/weekdays/{gradeId}")
     public ResponseEntity<Grade> updateWeekdayInGrade(@PathVariable Long gradeId, @RequestBody UpdateWeekdayRequest request) {
         Grade updatedGrade = weekdayService.updateWeekdayInGrade(gradeId, request.getOldWeekday(), request.getNewWeekday());
         return ResponseEntity.ok(updatedGrade);
     }
-
+    @PostMapping("/times")
+    public ResponseEntity<Grade> addTimeToWeekdayAndGrade(@RequestBody AddTimeRequest request) {
+        Grade savedTime = timeService.addTimeInWeekdayAndGrade(request.getGradeId(), request.getTime());
+        return new ResponseEntity<>(savedTime, HttpStatus.CREATED);
+    }
     @PostMapping("/weekdays")
     public ResponseEntity<Grade> addWeekdayToGrade(@RequestBody AddWeekdayRequest request) {
         Grade savedWeekday = weekdayService.addWeekdayToGrade(request.getGradeId(), request.getWeekday());
@@ -35,11 +40,15 @@ public class GradeController {
     }
     // Criar ou Atualizar uma Grade
     @PostMapping
-    public ResponseEntity<Grade> createOrUpdateGrade(@RequestBody Grade grade) {
+    public ResponseEntity<Grade> createOrUpdateGrade(@RequestBody GradeDTO grade) {
         Grade savedGrade = gradeService.createOrUpdateGrade(grade);
         return new ResponseEntity<>(savedGrade, HttpStatus.CREATED);
     }
-
+    @PutMapping("/times/{gradeId}")
+    public ResponseEntity<Grade> updateTimeInGradeAndWeekday(@PathVariable Long gradeId, @RequestBody UpdateTimeRequest request){
+        Grade updatedGrade = timeService.updateTimeInGradeAndWeekday(gradeId, request.getOldTime(), request.getNewTime());
+        return ResponseEntity.ok(updatedGrade);
+    }
     // Listar todas as Grades
     @GetMapping
     public ResponseEntity<List<Grade>> getAllGrades() {

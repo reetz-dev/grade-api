@@ -1,4 +1,6 @@
-package reetzzz.grade.weekday;
+package reetzzz.grade.dto;
+
+import reetzzz.grade.enums.Weekday;
 
 public class UpdateWeekdayRequest {
     private Long gradeId;

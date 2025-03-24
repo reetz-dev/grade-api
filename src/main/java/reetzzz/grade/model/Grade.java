@@ -1,7 +1,9 @@
 package reetzzz.grade.model;
 
 import jakarta.persistence.*;
-import reetzzz.grade.weekday.Weekday;
+import reetzzz.grade.dto.GradeDTO;
+import reetzzz.grade.enums.Time;
+import reetzzz.grade.enums.Weekday;
 
 import java.util.List;
 
@@ -13,12 +15,30 @@ public class Grade {
     private Long id;
     private String name;
     private List<Weekday> weekdays;
+    private List<Time> horarios;
+    @Version
+    private Long version;
+    public Grade(GradeDTO grade, List<Weekday> weekdays, List<Time> horarios) {
+        this.id = grade.id();
+        this.name = grade.name();
+        this.weekdays = weekdays;
+        this.horarios = horarios;
+    }
+
     public Long getId() {
         return id;
     }
 
     public List<Weekday> getWeekdays() {
         return weekdays;
+    }
+
+    public List<Time> getHorarios() {
+        return horarios;
+    }
+
+    public void setHorarios(List<Time> horarios) {
+        this.horarios = horarios;
     }
 
     public void setWeekdays(List<Weekday> weekdays) {
@@ -36,4 +56,12 @@ public class Grade {
     public void setName(String name) {
         this.name = name;
     }
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
 }

@@ -1,4 +1,4 @@
-package reetzzz.grade.weekday;
+package reetzzz.grade.enums;
 
 public enum Weekday {
     SEGUNDA_FEIRA,
