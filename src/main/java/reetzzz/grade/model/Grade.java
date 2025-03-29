@@ -16,8 +16,10 @@ public class Grade {
     private String name;
     private List<Weekday> weekdays;
     private List<Time> horarios;
-    @Version
-    private Long version;
+
+    public Grade() {
+    }
+
     public Grade(GradeDTO grade, List<Weekday> weekdays, List<Time> horarios) {
         this.id = grade.id();
         this.name = grade.name();
@@ -55,13 +57,6 @@ public class Grade {
 
     public void setName(String name) {
         this.name = name;
-    }
-    public Long getVersion() {
-        return version;
-    }
-
-    public void setVersion(Long version) {
-        this.version = version;
     }
 
 }

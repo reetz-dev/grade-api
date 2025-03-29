@@ -38,7 +38,6 @@ public class GradeController {
         Grade savedWeekday = weekdayService.addWeekdayToGrade(request.getGradeId(), request.getWeekday());
         return new ResponseEntity<>(savedWeekday, HttpStatus.CREATED);
     }
-    // Criar ou Atualizar uma Grade
     @PostMapping
     public ResponseEntity<Grade> createOrUpdateGrade(@RequestBody GradeDTO grade) {
         Grade savedGrade = gradeService.createOrUpdateGrade(grade);
@@ -49,7 +48,6 @@ public class GradeController {
         Grade updatedGrade = timeService.updateTimeInGradeAndWeekday(gradeId, request.getOldTime(), request.getNewTime());
         return ResponseEntity.ok(updatedGrade);
     }
-    // Listar todas as Grades
     @GetMapping
     public ResponseEntity<List<Grade>> getAllGrades() {
         List<Grade> grades = gradeService.getAllGrades();
@@ -60,7 +58,6 @@ public class GradeController {
         List<Grade> grades = weekdayService.getAllGradesWithWeekdays();
         return ResponseEntity.ok(grades);
     }
-    // Buscar uma Grade por ID
     @GetMapping("/{id}")
     public ResponseEntity<Grade> getGradeById(@PathVariable("id") Long id) {
         Optional<Grade> grade = gradeService.getGradeById(id);
@@ -75,7 +72,6 @@ public class GradeController {
         Grade grade = weekdayService.getWeekdaysByGrade(gradeId);
         return ResponseEntity.ok(grade);
     }
-    // Deletar uma Grade por ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteGrade(@PathVariable("id") Long id) {
         Optional<Grade> grade = gradeService.getGradeById(id);

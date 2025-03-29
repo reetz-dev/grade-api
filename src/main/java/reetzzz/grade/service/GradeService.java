@@ -16,9 +16,19 @@ public class GradeService {
     @Autowired
     private GradeRepository gradeRepository;
     @Transactional
-    public Grade createOrUpdateGrade(GradeDTO grade) {
-        Grade grade1 = new Grade(grade, null, null);
-        return gradeRepository.save(grade1);
+    public Grade createOrUpdateGrade(GradeDTO gradeDTO) {
+        if (gradeDTO.id() != null) {
+            Grade existingGrade = gradeRepository.findById(gradeDTO.id()).orElse(null);
+            if (existingGrade != null) {
+                existingGrade.setName(gradeDTO.name());
+                existingGrade.setWeekdays(null);
+                existingGrade.setHorarios(null);
+                return gradeRepository.save(existingGrade);
+            }
+        }
+
+        Grade newGrade = new Grade(gradeDTO, null, null);
+        return gradeRepository.save(newGrade);
     }
 
     public List<Grade> getAllGrades() {
