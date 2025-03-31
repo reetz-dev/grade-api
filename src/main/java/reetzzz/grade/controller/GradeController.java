@@ -1,6 +1,7 @@
 package reetzzz.grade.controller;
 
 import reetzzz.grade.dto.*;
+import reetzzz.grade.enums.Time;
 import reetzzz.grade.model.Grade;
 import reetzzz.grade.service.GradeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,6 +86,11 @@ public class GradeController {
     @DeleteMapping("/weekdays/{gradeId}/{weekday}")
     public ResponseEntity<Void> removeWeekdayFromGrade(@PathVariable Long gradeId, @PathVariable Weekday weekday) {
         weekdayService.removeWeekdayFromGrade(gradeId, weekday);
+        return ResponseEntity.noContent().build();
+    }
+    @DeleteMapping("/times/{gradeId}/{time}")
+    public ResponseEntity<Void> removeTimeFromGrade(@PathVariable Long gradeId, @PathVariable Time time) {
+        timeService.removeTimeFromGrade(gradeId, time);
         return ResponseEntity.noContent().build();
     }
 }

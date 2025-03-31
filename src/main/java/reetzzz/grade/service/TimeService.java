@@ -52,4 +52,16 @@ public class TimeService {
             throw new EntityNotFoundException("Matéria não encontrada!");
         }
     }
+
+    public void removeTimeFromGrade(Long gradeId, Time time) {
+        Grade grade = gradeRepository.findById(gradeId)
+                .orElseThrow(() -> new EntityNotFoundException("Matéria não encontrada!"));
+
+        if (grade.getHorarios() != null && grade.getHorarios().contains(time)) {
+            grade.getHorarios().remove(time);
+            gradeRepository.save(grade);
+        } else {
+            throw new IllegalArgumentException("Horário não encontrado na grade!");
+        }
+    }
 }

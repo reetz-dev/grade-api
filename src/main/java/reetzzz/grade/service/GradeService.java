@@ -17,6 +17,7 @@ public class GradeService {
     private GradeRepository gradeRepository;
     @Transactional
     public Grade createOrUpdateGrade(GradeDTO gradeDTO) {
+        System.out.println("Chamando createOrUpdateGrade");
         if (gradeDTO.id() != null) {
             Grade existingGrade = gradeRepository.findById(gradeDTO.id()).orElse(null);
             if (existingGrade != null) {

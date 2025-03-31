@@ -14,7 +14,11 @@ public class Grade {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @ElementCollection
+    @Enumerated(EnumType.STRING)
     private List<Weekday> weekdays;
+    @ElementCollection
+    @Enumerated(EnumType.STRING)
     private List<Time> horarios;
 
     public Grade() {
