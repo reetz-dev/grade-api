@@ -13,5 +13,5 @@ public enum Time {
             }
         }
         throw new IllegalArgumentException("Horário de aula inválida: " + value);
-    };
+    }
 }

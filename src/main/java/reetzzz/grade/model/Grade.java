@@ -7,6 +7,7 @@ import reetzzz.grade.enums.Weekday;
 
 import java.util.List;
 
+
 @Entity
 public class Grade {
 
