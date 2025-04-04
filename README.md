@@ -6,6 +6,7 @@
 - [Tecnologias](#Tecnologias)
 - [Modelagem](#Modelagem)
 - [Como executar o projeto](#Como-executar)
+- [Enums](#Enums)
 - [Endpoints](#Endpoints)
 
 ---
@@ -22,15 +23,14 @@ A **Grade API** faz parte de um sistema maior chamado [schedule-api](https://git
 
 ### Backend
 
-* [Java](https://www.java.com/pt-BR/) (OpenJDK 17)
+- [Java](https://www.java.com/pt-BR/) (OpenJDK 17)
 - [Spring Boot](https://spring.io/projects/spring-boot/)
-- Spring Data JPA
-- PostgreSQL
-- Lombok
-- Docker
+- [PostgreSQL](https://www.postgresql.org/)
+- [JUnit5](https://junit.org/junit5/)
 
 ---
 
+<a name="Modelagem"></a>
 ## 🧠 Modelagem
 
 A entidade principal é a `Grade`, com os seguintes campos:
@@ -42,6 +42,7 @@ A entidade principal é a `Grade`, com os seguintes campos:
 
 ---
 
+<a name="Como-executar"></a>
 ## ▶️ Como executar
 
 Para rodar a API localmente:
