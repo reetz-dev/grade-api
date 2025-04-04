@@ -1,6 +1,6 @@
 # Grade API
 
-## :pushpin: Conteúdo
+## :door: Conteúdo
 
 - [Sobre](#Sobre)
 - [Tecnologias](#Tecnologias)
@@ -12,14 +12,14 @@
 ---
 
 <a name="Sobre"></a>
-## :book: Sobre
+## :school: Sobre
 
 A **Grade API** faz parte de um sistema maior chamado [schedule-api](https://github.com/reetz-dev/schedule-api), permitindo a gestão de grades horárias escolares. O objetivo é possibilitar a criação, edição e remoção de dias da semana e horários em uma determinada grade.
 
 ---
 
 <a name="Tecnologias"></a>
-## :computer: Tecnologias
+## :zap: Tecnologias
 
 ### Backend
 
@@ -31,19 +31,14 @@ A **Grade API** faz parte de um sistema maior chamado [schedule-api](https://git
 ---
 
 <a name="Modelagem"></a>
-## 🧠 Modelagem
+## :game_die: Modelagem
 
-A entidade principal é a `Grade`, com os seguintes campos:
-
-- `id`: Identificador único da grade
-- `name`: Nome da grade
-- `weekdays`: Lista de dias da semana
-- `horarios`: Lista de horários
+(colocarei aqui)
 
 ---
 
 <a name="Como-executar"></a>
-## ▶️ Como executar
+##  :arrow_forward: Como executar
 
 Para rodar a API localmente:
 
@@ -65,7 +60,7 @@ $ ./mvnw spring-boot:run
 Grade API estará acessível em `http://localhost:3002`
 
 <a name="Enums"></a>
-## :paperclip: Enums
+## :calendar: Enums
 
 <details>
   <summary>
@@ -99,11 +94,11 @@ Grade API estará acessível em `http://localhost:3002`
 
 
 <a name="Endpoints"></a>
-## :paperclip: Endpoints
+## :pushpin: Endpoints
 
 <details>
   <summary>
-    <strong>Get</strong>
+    <strong>:blue_book: GET</strong>
   </summary>
   
 #### Retorna todas as matérias
@@ -111,6 +106,7 @@ Grade API estará acessível em `http://localhost:3002`
 ```http
   GET http://localhost:3002/api/grades
 ```
+
 ##### Exemplo de resposta:
 ```json
 [
@@ -213,7 +209,7 @@ Grade API estará acessível em `http://localhost:3002`
 
 <details>
   <summary>
-    <strong>Post</strong>
+    <strong>:green_book: POST</strong>
   </summary>
 
 #### Cadastro de matérias
@@ -317,7 +313,7 @@ Grade API estará acessível em `http://localhost:3002`
 
 <details>
   <summary>
-    <strong>PUT</strong>
+    <strong>:orange_book: PUT</strong>
   </summary>
   
 #### Atualiza dia da semana da matéria
@@ -414,7 +410,7 @@ Grade API estará acessível em `http://localhost:3002`
 
 <details>
   <summary>
-    <strong>DELETE</strong>
+    <strong>:closed_book: DELETE</strong>
   </summary>
 
 #### Inativa uma matéria
