@@ -64,7 +64,7 @@ Grade API estará acessível em `http://localhost:3002`
 
 <details>
   <summary>
-    <strong>Weekdays</strong>
+    <strong>Weekday</strong>
   </summary>
 
 ```
@@ -79,7 +79,7 @@ Grade API estará acessível em `http://localhost:3002`
 
 <details>
   <summary>
-    <strong>Weekdays</strong>
+    <strong>Time</strong>
   </summary>
 
 ```
