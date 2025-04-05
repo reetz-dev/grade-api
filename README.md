@@ -33,7 +33,8 @@ A **Grade API** faz parte de um sistema maior chamado [schedule-api](https://git
 <a name="Modelagem"></a>
 ## :game_die: Modelagem
 
-![image](https://github.com/user-attachments/assets/34d3c9e9-5188-4503-b469-a00d7bf99938)
+![image](https://github.com/user-attachments/assets/f5a83368-ac21-4758-ae5f-14f87094f12e)
+
 
 ---
 
