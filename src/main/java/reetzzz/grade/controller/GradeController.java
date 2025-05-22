@@ -15,6 +15,7 @@ import reetzzz.grade.enums.Weekday;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/grades")
 public class GradeController {
